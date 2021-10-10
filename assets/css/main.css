@@ -16,19 +16,41 @@
 .header__navbar-item {
     margin: 0 8px;
     position: relative;
+    min-height: 20px;
 }
-.header__navbar-item:hover {
-    opacity: 0.7;
+.header__navbar-item:hover,
+.header__navbar-item-link:hover,
+.header__navbar-item--icon:hover {
     cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+}
+.header__navbar-item-no-hover {
+    cursor: text;
+    color: var(--white-color);
 }
 
 .header__navbar-item,
 .header__navbar-item-link {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--white-color);
     text-decoration: none;
     font-weight: 400;
+    padding-top: 0;
+}
+
+.header__navbar-item,
+.header__navbar-item-link,
+.header__navbar-item--icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.header__navbar-item--icon {
+    color: var(--white-color);
+    font-size: 1.8rem;
+    text-decoration: none;
+    margin: 0 4px;
 }
 
 .header__navbar-item--separate::after {
@@ -40,4 +62,57 @@
     right: -10px;
     top: 50%;
     transform: translateY(-50%);
+}
+/* Header QR */
+
+.header__qr {
+    width: 190px;
+    background-color: var(--white-color);
+    position: absolute;
+    left: 0;
+    top: 128%;
+    padding: 8px;
+    border-radius: 2px;
+    display: none;
+}
+
+/* bat cau de hover */
+.header__qr::before {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    content: "";
+    display: block;
+    top: -10px;
+    left: 0;
+}
+
+.header__navbar-item-has-qr:hover .header__qr {
+    display: block;
+}
+
+.header__qr-img {
+    width: 100%;
+}
+
+.header__qr-apps {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__qr-download {
+    height: 16px;
+    min-width: 60px;
+}
+
+.header__qr-download:first-child {
+    margin-left: 10px;
+}
+.header__qr-download:last-child {
+    margin-right: 7px;
+}
+
+.header__qr-download--down {
+    margin-top: 6px;
+    height: 16px;
 }
