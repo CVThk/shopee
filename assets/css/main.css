@@ -634,9 +634,6 @@
     justify-content: space-between;
 }
 
-.header__cart-item-description {
-
-}
 
 .header__cart-item-remove {
     color: var(--text-color);
@@ -824,6 +821,55 @@
 
 .header__search-input:focus ~ .header__search-history {
     display: block;
+}
+
+/* Header sort bar */
+.header__sort-bar {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    left: 0;
+    height: var(--header-sort-bar-height);
+    background-color: var(--white-color);
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    z-index: 5;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    display: none;
+}
+
+.header__sort-bar-item {
+    flex: 1;
+}
+
+.header__sort-bar-link::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 60%;
+    width: 1px;
+    top: 50%;
+    border-left: 1px solid #e5e5e5;
+    transform: translateY(-50%);
+}
+
+.header__sort-bar-item:first-child .header__sort-bar-link::before {
+    display: none;
+}
+
+.header__sort-bar-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    display: block;
+    line-height: var(--header-sort-bar-height);
+    text-align: center;
+}
+
+.header__sort-bar-active .header__sort-bar-link {
+    color: var(--primary-color);
 }
 
 /* Search history */
