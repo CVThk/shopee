@@ -30,6 +30,12 @@
     .header__sort-bar {
         display: flex;
     }
+    .app__content {
+        padding-top: 8px;
+    }
+    .mobile__category {
+        display: flex;
+    }
 }
 
 /* Tablet */
@@ -46,6 +52,8 @@
 
 /* Mobile */
 @media (max-width: 739px) {
+    
+
     .hide-on-mobile {
         display: none;
     }
@@ -77,6 +85,20 @@
         width: unset;
         padding-right: 24px;
     }
+    .pagination-item {
+        margin: 0;
+    }
+    .pagination-item__link {
+        --height: 24px;
+        font-size: 1.6rem;
+        min-width: 34px;
+    }
+    .home-product {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+
     @keyframes mobileSearchSideIn {
         from {
             opacity: 0;
